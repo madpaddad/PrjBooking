@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
 from .forms import BookingForm
 
@@ -10,7 +10,7 @@ def bookroom(request):
         form = BookingForm(request.POST)
         if form.is_valid():
             form.save()
-            return render(request, 'success.html', {'form': form})
+            return redirect('bookingform')
         else:
             print("Form errors:", form.errors)
     else:

@@ -27,6 +27,6 @@ class formBook(models.Model):
     room = models.CharField(max_length=3, choices=ROOM_CHOICES)
     time_in = models.CharField(max_length=5, choices=TIME_CHOICES)
     time_out = models.CharField(max_length=5, choices=TIME_CHOICES)
-
+    
     def __str__(self):
         return f"{self.firstname} {self.lastname} - {self.room} from {self.time_in} to {self.time_out}"
